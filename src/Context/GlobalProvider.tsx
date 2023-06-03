@@ -1,17 +1,19 @@
 import { createContext, useState } from "react";
 
 interface Money {
-  RP: number;
-  setRP;
-  BP;
-  setBP;
-  OP;
-  setOP;
+  RP?: number;
+  setRP?: Function;
+  BP?: number;
+  setBP?: Function;
+  OP?: number;
+  setOP?: Function;
 }
 
-export const GlobalContext = createContext({});
+let defaultContext: Money = {};
 
-export const ContextProvider: any = ({ children }) => {
+export const GlobalContext = createContext(defaultContext);
+
+export const ContextProvider: any = ({ children }: any) => {
   const [RP, setRP] = useState(0);
   const [BP, setBP] = useState(0);
   const [OP, setOP] = useState(0);
