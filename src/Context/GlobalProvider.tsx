@@ -1,5 +1,14 @@
 import { createContext, useState } from "react";
 
+interface Money {
+  RP: number;
+  setRP;
+  BP;
+  setBP;
+  OP;
+  setOP;
+}
+
 export const GlobalContext = createContext({});
 
 export const ContextProvider: any = ({ children }) => {
